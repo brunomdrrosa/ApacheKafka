@@ -1,3 +1,5 @@
+package br.com.ecommerce;
+
 import java.math.BigDecimal;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
