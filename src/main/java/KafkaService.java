@@ -2,13 +2,14 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+import java.io.Closeable;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 import java.util.UUID;
 
-public class KafkaService {
-    private final KafkaConsumer<String,String> consumer;
+public class KafkaService implements Closeable {
+    private final KafkaConsumer<String, String> consumer;
     private final ConsumerFunction parse;
 
     public KafkaService(String groupId, String topic, ConsumerFunction parse) {
@@ -38,4 +39,10 @@ public class KafkaService {
             }
         }
     }
+
+    @Override
+    public void close() {
+        consumer.close();
+    }
+
 }
