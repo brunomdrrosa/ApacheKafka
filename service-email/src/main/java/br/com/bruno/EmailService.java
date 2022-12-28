@@ -1,6 +1,5 @@
 package br.com.ecommerce;
 
-import br.com.ecommerce.KafkaService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import java.util.Map;

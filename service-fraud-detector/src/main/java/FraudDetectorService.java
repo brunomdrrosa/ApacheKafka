@@ -1,5 +1,6 @@
 package br.com.ecommerce;
 
+import br.com.bruno.Order;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import java.util.Map;
@@ -27,7 +28,7 @@ public class FraudDetectorService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("br.com.ecommerce.Order processed");
+        System.out.println("Order processed");
     }
 
 }
